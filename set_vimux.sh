@@ -2,13 +2,13 @@
 
 if [ ! "$HOME/.vimrc" ]; then
 	echo installing vim configuration file...
-	cp ".vimrc" "$HOME/"
+	cp "vimrc" "$HOME/.vimrc"
 	echo vim configuration file successfully installed!
 fi
 
 if [ ! "$HOME/.tmux.conf" ]; then
 	echo installing tmux configuration file...
-	cp ".tmux.conf" "$HOME/"
+	cp "tmux.conf" "$HOME/.tmux.conf"
 	echo tmux configuration file successfully installed!
 fi	
 

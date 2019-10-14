@@ -11,7 +11,7 @@ if [ "$#" -ne 1 ]; then
 	usage
 	exit 0
 fi
-if [ $1 == "--install" ]; then
+if [ "$1" = "--install" ]; then
 	if [ ! "$HOME/.vimrc" ]; then
 		echo installing vim configuration file...
 		cp "vimrc" "$HOME/.vimrc"
@@ -39,7 +39,7 @@ if [ $1 == "--install" ]; then
 	else
 		echo vim plugin manager and essential plugins already installed!
 	fi
-elif [ "$1" == "--uninstall" ]; then
+elif [ "$1" = "--uninstall" ]; then
 	rm -f "$HOME/.vimrc"
 	echo vim configuration file successfully uninstalled!
 	rm -f "$HOME/.tmux.conf"

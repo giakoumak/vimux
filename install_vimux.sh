@@ -12,14 +12,14 @@ if [ "$#" -ne 1 ]; then
 	exit 0
 fi
 if [ "$1" = "--install" ]; then
-	if [ ! "$HOME/.vimrc" ]; then
+	if [ ! -f "$HOME/.vimrc" ]; then
 		echo installing vim configuration file...
 		cp "vimrc" "$HOME/.vimrc"
 		echo vim configuration file successfully installed!
 	else
 		echo vim configuration file already installed!
 	fi
-	if [ ! "$HOME/.tmux.conf" ]; then
+	if [ ! -f "$HOME/.tmux.conf" ]; then
 		echo installing tmux configuration file...
 		cp "tmux.conf" "$HOME/.tmux.conf"
 		echo tmux configuration file successfully installed!

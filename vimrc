@@ -9,6 +9,11 @@ set smartcase			" only ignore case when all letters are lowercase
 set number			" show line numbers
 set smartindent			" smart autoindenting on new line
 
+" above 80-column width police
+highlight ColorColumn ctermbg=magenta
+call matchadd('ColorColumn', '\%81v', 100)
+
+" enable mouse support even for ultra wide screens if possible
 set mouse=a
 if has("mouse_sgr")
 	set ttymouse=sgr
@@ -16,6 +21,8 @@ else
 	set ttymouse=xterm2
 end
 
+" where plugins happen
 execute pathogen#infect()
 
+" autoload NERDTree with each new Vim instance 
 autocmd vimenter * NERDTree

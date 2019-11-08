@@ -25,7 +25,15 @@ if [ "$1" = "--install" ]; then
 		echo tmux configuration file successfully installed!
 	else
 		echo tmux configuration file already installed!
-	fi	
+	fi
+
+	if [ ! -f "$HOME/.zshrc" ]; then
+        	echo "Setting up zsh..."
+		cp zshrc "$HOME/.zshrc" 
+	else 
+		echo "ZSH already configured..."
+	fi
+
 	if [ ! -d "$HOME/.vim" ]; then
 		echo installing vim plugin manager and essential plugins...
 		mkdir "$HOME/.vim"

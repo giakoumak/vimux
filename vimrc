@@ -20,6 +20,8 @@ set smartindent
 set colorcolumn=73,81
 " police color
 highlight ColorColumn ctermbg=238
+" enable spell checker (language = en_us)
+set spell spelllang=en_us
 
 " enable mouse support even for ultra wide screens if possible
 set mouse=a

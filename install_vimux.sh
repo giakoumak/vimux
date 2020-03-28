@@ -31,6 +31,8 @@ if [ "$1" = "--install" ]; then
 			https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 		cp "coc-settings.json" "$HOME/.vim"
 		vim +'PlugInstall --sync' +qa
+		vim +'CocInstall coc-java --sync' +qa
+		vim +'CocInstall coc-json --sync' +qa
 		echo vim plugin manager and essential plugins successfully installed!
 	else
 		echo vim plugin manager and essential plugins already installed!

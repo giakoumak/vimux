@@ -33,6 +33,7 @@ if [ "$1" = "--install" ]; then
 		vim +'PlugInstall --sync' +qa
 		vim +'CocInstall coc-java --sync' +qa
 		vim +'CocInstall coc-json --sync' +qa
+		vim +'CocInstall coc-texlab --sync' +qa
 		echo vim plugin manager and essential plugins successfully installed!
 	else
 		echo vim plugin manager and essential plugins already installed!

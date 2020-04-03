@@ -7,6 +7,7 @@
 " 	NodeJS
 " 	npm
 " 	exuberant-ctags
+" 	ccls
 
 " where plugins happen
 call plug#begin()
@@ -16,6 +17,8 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'majutsushi/tagbar'
+Plug 'pseewald/nerdtree-tagbar-combined'
+Plug 'szw/vim-maximizer'
 call plug#end()
 
 " TextEdit might fail if hidden is not set.
@@ -182,15 +185,11 @@ else
 	set ttymouse=xterm2
 end
 
-" autoload NERDTree with each new Vim instance 
-autocmd vimenter * NERDTree
-" instantly focus out of the NERDTree after it is opened
-autocmd vimenter * wincmd w
 " close vim if the only window left open is a NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-" autoload Tagbar with each new Vim instance
-autocmd vimenter * Tagbar
-" toggle NERDTree on/off using <F2>
-nmap <F2> :NERDTreeToggle<CR>
-" toggle Tagbar on/off using <F3>
-nmap <F3> :TagbarToggle<CR>
+" autoload both NERDTree and Tagbar with each new Vim instance
+autocmd vimenter * ToggleNERDTreeAndTagbar
+" toggle NERDTree and Tagbar on/off using <F2>
+nmap <F2> :ToggleNERDTreeAndTagbar<CR>
+" custom Tagbar highlight color
+:highlight TagbarHighlight term=reverse ctermfg=235 ctermbg=10

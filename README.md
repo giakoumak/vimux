@@ -15,8 +15,8 @@ cp vimrc $HOME/.vimrc
 
 # Copy the tmux configuration files to the correct directory.
 Credits to Gregory Pakosz for the tmux configuration.
-The original files can be found on [this GitHub repository.]
-(https://github.com/gpakosz/.tmux)
+The original files can be found on
+[this GitHub repository.](https://github.com/gpakosz/.tmux)
 ```
 cp tmux.conf $HOME/.tmux.conf
 cp tmux.conf.local $HOME/.tmux.conf.local

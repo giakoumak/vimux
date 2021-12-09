@@ -4,7 +4,7 @@
 * git
 * curl
 * wget
-* NodeJS
+* NodeJS >= 12
 * npm
 * exuberant-ctags
 * ccls
@@ -35,13 +35,33 @@
 
   ```chsh -s $(which zsh)```
 
-## Copy the Vim configuration file to the correct directory
+## Install OH-My-zsh
+
+Download and install oh-my-zsh
+
+```sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"```
+
+Configure oh-my-zsh themes, plugins, etc by editing the necessary fields of the ```$(HOME)/.zshrc``` configuration file
+
+For more information, read the official oh-my-zsh documentation (https://github.com/ohmyzsh/ohmyzsh)
+
+## **(OPTIONAL)** Install powerlevel10k theme for oh-my-zsh
+
+Download and install Powerlevel10k
+
+```git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k```
+
+Set ```ZSH_THEME="powerlevel10k/powerlevel10k"``` in ```$(HOME)/.zshrc``` configuration file
+
+For more information, read the official Powerlevel10k documentation (https://github.com/romkatv/powerlevel10k)
+
+## INSTALL Vim configuration file
 
 ```
 cp vimrc $HOME/.vimrc
 ```
 
-## Copy the tmux configuration files to the correct directory
+## INSTALL tmux configuration files
 
 Credits to Gregory Pakosz for the tmux configuration. The original files can be found on [this GitHub repository.](https://github.com/gpakosz/.tmux)
 ```

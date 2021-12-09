@@ -13,72 +13,54 @@
 
 * On Ubuntu
 
-  Install ZSH
+  Install ZSH: ```apt install zsh```.
 
-  ```apt install zsh```
-
-  Change default shell
-
-  ```chsh -s $(which zsh)```
+  Change default shell: ```chsh -s $(which zsh)```.
 
 * On MacOS
 
-  **(Optional)** Install iTerm2
+  **(Optional)** Install iTerm2: ```brew cask install iterm2```.
 
-  ```brew cask install iterm2```
+  Install ZSH: ```brew install zsh```.
 
-  Install ZSH
+  Change default shell: ```chsh -s $(which zsh)```.
 
-  ```brew install zsh```
-
-  Change default shell
-
-  ```chsh -s $(which zsh)```
 
 ## Install OH-My-zsh
 
-Download and install oh-my-zsh
+Download and install oh-my-zsh: ```sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"```.
 
-```sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"```
+Configure oh-my-zsh themes, plugins, etc by editing the necessary fields of the ```$HOME/.zshrc``` configuration file.
 
-Configure oh-my-zsh themes, plugins, etc by editing the necessary fields of the ```$(HOME)/.zshrc``` configuration file
-
-For more information, read the official oh-my-zsh documentation (https://github.com/ohmyzsh/ohmyzsh)
+For more information, read the official oh-my-zsh documentation (https://github.com/ohmyzsh/ohmyzsh).
 
 ## **(OPTIONAL)** Install powerlevel10k theme for oh-my-zsh
 
-Download and install Powerlevel10k
+Download and install Powerlevel10k: ```git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k```.
 
-```git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k```
+Set ```ZSH_THEME="powerlevel10k/powerlevel10k"``` in ```$HOME/.zshrc``` configuration file.
 
-Set ```ZSH_THEME="powerlevel10k/powerlevel10k"``` in ```$(HOME)/.zshrc``` configuration file
+On the first run, Powerlevel10k will run a configuration wizard to customize your environment and enhance your experience. If it does not trigger automatically, or if you want to reconfigure your environment at any time, run ```p10k configure```.
 
-For more information, read the official Powerlevel10k documentation (https://github.com/romkatv/powerlevel10k)
+For more information, read the official Powerlevel10k documentation (https://github.com/romkatv/powerlevel10k).
 
-## INSTALL Vim configuration file
+## INSTALL Vim & TMUX configuration file
 
-```
-cp vimrc $HOME/.vimrc
-```
+From the vimux root directory, run:
 
-## INSTALL tmux configuration files
+- ```cp vimrc $HOME/.vimrc```
+- ```cp tmux.conf $HOME/.tmux.conf```
+- ```cp tmux.conf.local $HOME/.tmux.conf.local```
 
 Credits to Gregory Pakosz for the tmux configuration. The original files can be found on [this GitHub repository.](https://github.com/gpakosz/.tmux)
-```
-cp tmux.conf $HOME/.tmux.conf
-cp tmux.conf.local $HOME/.tmux.conf.local
-```
+## INSTALL Vim-plug plugin manager 
+Download plug.vim and put it in the "autoload" directory: ```curl -fLo $HOME/.vim/autoload/plug.vim --create-dirs \
+	http://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim```.
 
-## Download Vim plugin manager and place it to the correct directory
-```
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-	http://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-```
+For more information, read the official vim-plug documentation (https://github.com/junegunn/vim-plug).
 
-## Copy Conquer of Completion settings file to the correct directory
-```
-cp coc-settings.json $HOME/.vim/
-```
+## Install Conquer of Completion settings file
+From the vimux root directory, run: ```cp coc-settings.json $HOME/.vim/```.
 
 ## Restart Vim and trigger the installation of plugins
 While in Vim Normal mode, type the following:
@@ -98,32 +80,32 @@ Note that CoC plugins usually rely on some pre-existing packages. For instance, 
 
 ## List of TMUX KEY Bindings
 
-`prefix` means you have to either hit `Ctrl+a` or `Ctrl+b`
+`prefix` means you have to either hit `Ctrl+a` or `Ctrl+b`.
 
-`prefix d` detach from the current session
+`prefix d` detaches from the current session.
 
-`prefix x` kill the current pane
+`prefix x` kills the current pane.
 
-`prefix e` open ~/.tmux.conf.local
+`prefix e` opens ```$(HOME)/.tmux.conf.local```.
 
-`prefix r` reload the configuration
+`prefix r` reloads the configuration.
 
-`prefix c` create new window
+`prefix c` creates new window.
 
-`prefix m` toggle mouse mode on/off
+`prefix m` toggles mouse mode on/off.
 
-`prefix -` split the current pane horizontally
+`prefix -` splits the current pane horizontally.
 
-`prefix |` split the current pane vertically
+`prefix |` splits the current pane vertically.
 
-`prefix +` maximize the current pane in a new window (repeat to undo)
+`prefix +` maximizes the current pane in a new window (repeat to undo).
 
-`prefix Space` change the layout of the current window (need at least two panes)
+`prefix Space` changes the layout of the current window (needs at least two panes).
 
-`prefix <` swap the current pane with the previous one (need at least two panes)
+`prefix <` swaps the current pane with the previous one (needs at least two panes).
 
-`prefix >` swap the current pane with the next one (need at least two panes) 
+`prefix >` swaps the current pane with the next one (need at least two panes).
 
-`Shift Left-Arrow` select the previous window
+`Shift Left-Arrow` selects the previous window.
 
-`Shift Right-Arrow` select the next window
+`Shift Right-Arrow` selects the next window.

@@ -38,9 +38,9 @@ colorscheme badwolf
 " LIGHTLINE
 " -----------------------------------------------------------------------------
 
-" Disable display of mode information, it will be displayed in
-" the statusline
+" Disable display of mode information, it will be displayed in the statusline.
 set noshowmode
+" Always show the status line.
 set laststatus=2
 
 " -----------------------------------------------------------------------------
@@ -81,7 +81,7 @@ let g:ctrlsf_default_view = 'normal'
 let g:ctrlsf_regex_pattern = 0
 let g:ctrlsf_position = 'right'
 let g:ctrlsf_winsize = '46'
-let g:ctrlsf_default_root = 'cwd'   " projcet
+let g:ctrlsf_default_root = 'cwd'
 
 " -----------------------------------------------------------------------------
 " FSWITCH
@@ -109,7 +109,7 @@ au! BufEnter *.h   let b:fswitchdst = 'cpp,c'
 nmap <buffer> <silent> <leader> ,PP
 nmap <buffer> <silent> <leader> ,PN
 
-" NOTE: This doesn't seem to disable the sorting
+" NOTE: This doesn't seem to disable the sorting.
 let g:disable_protodef_sorting = 1
 
 " -----------------------------------------------------------------------------
@@ -117,29 +117,29 @@ let g:disable_protodef_sorting = 1
 " -----------------------------------------------------------------------------
 
 " Set internal encoding of vim, not needed on neovim, since coc.nvim using some
-" unicode characters in the file autoload/float.vim
+" unicode characters in the file autoload/float.vim.
 set encoding=utf-8
 
-" TextEdit might fail if hidden is not set
+" TextEdit might fail if hidden is not set.
 set hidden
 
-" Some servers have issues with backup files, see #649
+" Some servers have issues with backup files, see #649.
 set nobackup
 set nowritebackup
 
-" Give more space for displaying messages
+" Give more space for displaying messages.
 set cmdheight=2
 
 " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
-" delays and poor user experience
+" delays and poor user experience.
 set updatetime=300
 
-" Don't pass messages to |ins-completion-menu|
+" Don't pass messages to |ins-completion-menu|.
 set shortmess+=c
 
-" Use tab for trigger completion with characters ahead and navigate
+" Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
-" other plugin before putting this into your config
+" other plugin before putting this into your config.
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<TAB>" :
@@ -151,7 +151,7 @@ function! s:check_back_space() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
-" Use <c-space> to trigger completion
+" Use <c-space> to trigger completion.
 if has('nvim')
   inoremap <silent><expr> <c-space> coc#refresh()
 else
@@ -159,12 +159,12 @@ else
 endif
 
 " Make <CR> auto-select the first completion item and notify coc.nvim to
-" format on enter, <cr> could be remapped by other vim plugin
+" format on enter, <cr> could be remapped by other vim plugin.
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
-" Use `[g` and `]g` to navigate diagnostics
-" Use `:CocDiagnostics` to get all diagnostics of current buffer in location list
+" Use `[g` and `]g` to navigate diagnostics.
+" Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
@@ -206,7 +206,7 @@ augroup mygroup
 augroup end
 
 " Applying codeAction to the selected region.
-" Example: `<leader>aap` for current paragraph
+" Example: `<leader>aap` for current paragraph.
 xmap <leader>a  <Plug>(coc-codeaction-selected)
 nmap <leader>a  <Plug>(coc-codeaction-selected)
 
@@ -277,58 +277,77 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 " VIM SETTINGS
 " -----------------------------------------------------------------------------
 
-" Enable indentation plugin
+" Enable indentation plugin.
 filetype plugin indent on
-" Enable line numbers
-set nu
-" Enable syntax highlighting
+" Enable line numbers.
+"set nu
+" Enable syntax highlighting.
 syntax on
-" Enable filetype detection
+" Enable filetype detection.
 :filetype on
-" Enable incremental search
+" Enable incremental search.
 set incsearch
-" Enable highlight search
+" Enable highlight search.
 set hlsearch
-" Ignore case in search
+" Ignore case in search.
 set ignorecase
-" Ignore case when no letter is capital
+" Ignore case when no letter is capital.
 set smartcase
-" Smart auto-indenting on new line
+" Smart auto-indenting on new line.
 set smartindent
-set splitbelow          " Always split below
-set mouse=a             " Enable mouse drag on window splits
-" Enable mouse support even for ultra wide screens if possible
+" Always split below.
+set splitbelow
+"Always split right.
+set splitright
+" 80-char width mark.
+set colorcolumn=80
+" 80-char width mark color.
+highlight ColorColumn ctermbg=238
+" Enable spell checker (language = en_us).
+"set spell spelllang=en_us
+" Enable mouse drag on window splits.
+set mouse=a
+" Enable mouse support even for ultra wide screens, if possible.
 if has("mouse_sgr")
 	set ttymouse=sgr
 else
 	set ttymouse=xterm2
 end
-" How many columns of whitespace a \t is worth
-"set tabstop=4
-"" How many columns of whitespace a “level of indentation” is worth
-"set shiftwidth=4
-" Use spaces when tabbing
+" How many columns of whitespace a \t is worth.
+set tabstop=8
+" Setting this to a non-zero value other than tabstop will make the tab key (in
+" insert mode) insert a combination of spaces (and possibly tabs) to simulate
+" tab stops at this width.
+set softtabstop=0
+" Use spaces when tabbing.
 "set expandtab
+" How many columns of whitespace a “level of indentation” is worth.
+set shiftwidth=8
+" Enabling this will make the tab key (in insert mode) insert spaces or tabs to
+" go to the next indent of the next tabstop when the cursor is at the beginning
+" of a line (i.e. the only preceding characters are whitespace).
+set smarttab
 
 if !has('nvim')
-    set termwinsize=12x0    " Set terminal size
+    " Set terminal size.
+    set termwinsize=12x0
 endif
 
 " -----------------------------------------------------------------------------
 " MAPPINGS
 " -----------------------------------------------------------------------------
 
-"General
+" General
 nmap        <C-B>     :buffers<CR>
 nmap        <C-J>     :term<CR>
 "
-"NERDTree
+" NERDTree
 nmap        <F2>      :NERDTreeToggle<CR>
 
-"tagbar
+" tagbar
 nmap        <F8>      :TagbarToggle<CR>
 
-"ctrlds
+" ctrlds
 nmap        <C-F>f    <Plug>CtrlSFPrompt
 xmap        <C-F>f    <Plug>CtrlSFVwordPath
 xmap        <C-F>F    <Plug>CtrlSFVwordExec
@@ -338,7 +357,7 @@ nnoremap    <C-F>o    :CtrlSFOpen<CR>
 nnoremap    <C-F>t    :CtrlSFToggle<CR>
 inoremap    <C-F>t    <Esc>:CtrlSFToggle<CR>
 
-"fswitch
+" fswitch
 nmap        <C-Z>     :vsplit <bar> :wincmd l <bar> :FSRight<CR>
 
 " -----------------------------------------------------------------------------
@@ -349,17 +368,17 @@ nmap        <C-Z>     :vsplit <bar> :wincmd l <bar> :FSRight<CR>
 " Vim settings
 " -----------------------------------------------------------------------------
 
-" Always render sign column so editor doesn't snap when there's a YCM error
+" Always render sign column so editor doesn't snap when there's an error.
 set signcolumn=yes
 
 " -----------------------------------------------------------------------------
 " Mappings
 " -----------------------------------------------------------------------------
 
-" Open vim-dispatch window and scroll to bottom
+" Open vim-dispatch window and scroll to bottom.
 nnoremap    <C-m>m    :Copen<CR> <bar> G
 
-" Build debug and release targets
+" Build debug and release targets.
 nnoremap    <C-m>bd   :Dispatch! make -C build/Debug<CR>
 nnoremap    <C-m>br   :Dispatch! make -C build/Release<CR>
 
@@ -367,7 +386,7 @@ nnoremap    <C-m>br   :Dispatch! make -C build/Release<CR>
 " Functions
 " -----------------------------------------------------------------------------
 
-" Map <F6> to the Debug executable with passed filename
+" Map <F6> to the Debug executable with passed filename.
 function SetBinaryDebug(filename)
     let bpath = getcwd() . "/bin/Debug/" . a:filename
     execute "nnoremap <F6> :Dispatch "
@@ -376,7 +395,7 @@ function SetBinaryDebug(filename)
     echo "<F6> will run: " . bpath
 endfunction
 
-" Map <F7> to the Release executable with passed filename
+" Map <F7> to the Release executable with passed filename.
 function SetBinaryRelease(filename)
     let bpath = getcwd() . "/bin/Release/" . a:filename 
     execute "nnoremap <F7> :Dispatch "

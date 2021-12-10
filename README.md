@@ -44,6 +44,26 @@ On the first run, Powerlevel10k will run a configuration wizard to customize you
 
 For more information, read the official Powerlevel10k documentation (https://github.com/romkatv/powerlevel10k).
 
+## **(OPTIONAL)** install ZSH/oh-my-zsh PLUgins
+
+- zsh-autosuggestion
+
+  Download the plugin repository: ```git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-autosuggestions```.
+
+  Add the plugin to the list of autoload plugins (```plugins=(git ...other plugins... zsh-autosuggestions)```), by editing ```$HOME/.zshrc``` configuration file.
+
+  Reset the terminal or open a new session.
+
+  For more information, read the official plugin documentation (https://github.com/zsh-users/zsh-autosuggestions).
+
+- zsh-syntax-highlighting
+
+  Download the plugin repository: ```git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting```.
+
+  Add the plugin to the list of autoload plugins (```plugins=(git ...other plugins... zsh-syntax-highlighting)```), by editing ```$HOME/.zshrc``` configuration file.
+
+  For more information, read the official plugin documentation (https://github.com/zsh-users/zsh-syntax-highlighting).
+
 ## INSTALL Vim & TMUX configuration file
 
 From the vimux root directory, run:

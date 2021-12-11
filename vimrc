@@ -327,6 +327,9 @@ set shiftwidth=8
 " go to the next indent of the next tabstop when the cursor is at the beginning
 " of a line (i.e. the only preceding characters are whitespace).
 set smarttab
+" Autocomplete commands using nice menu in place of window status.
+" Enable `Ctrl-N` and `Ctrl-P` to scroll through matches.
+set wildmenu
 
 if !has('nvim')
     " Set terminal size.

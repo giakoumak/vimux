@@ -6,6 +6,7 @@
 * wget
 * NodeJS >= 12
 * npm
+* ack
 * exuberant-ctags
 * ccls
 

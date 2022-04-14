@@ -14,7 +14,7 @@
 
 * On Ubuntu
 
-  Install ZSH: ```apt install zsh```.
+  Install ZSH: ```sudo apt install zsh```.
 
   Change default shell: ```chsh -s $(which zsh)```.
 
@@ -25,6 +25,12 @@
   Install ZSH: ```brew install zsh```.
 
   Change default shell: ```chsh -s $(which zsh)```.
+
+* On Centos
+
+  Install ZSH: ```sudo dnf install zsh```.
+
+  Change default shell: ```sudo usermod --shell $(which zsh) $(id -u -n)```.
 
 
 ## Install OH-My-zsh

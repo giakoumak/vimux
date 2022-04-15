@@ -51,7 +51,7 @@ On the first run, Powerlevel10k will run a configuration wizard to customize you
 
 For more information, read the official Powerlevel10k documentation (https://github.com/romkatv/powerlevel10k).
 
-## **(OPTIONAL)** install ZSH/oh-my-zsh PLUgins
+## **(OPTIONAL)** Install ZSH/oh-my-zsh plugins
 
 - zsh-autosuggestion
 

@@ -175,6 +175,20 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
+function! VerticalSplitIfNotOpen(fname)
+  let bufnum = bufnr(expand(a:fname))
+  let winnum = bufwinnr(bufnum)
+  if winnum != -1
+    " Jump to existing split
+    exe winnum . "wincmd w"
+  else
+    " Open in new vsplit
+    exe "vsplit " . a:fname
+  endif
+endfunction
+
+command! -nargs=+ CocVerticalSplitIfNotOpen :call VerticalSplitIfNotOpen(<f-args>)
+
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 

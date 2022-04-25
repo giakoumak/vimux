@@ -23,6 +23,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'itchyny/lightline.vim'
 Plug 'tomasr/molokai'
 Plug 'sjl/badwolf'
+Plug 'wesQ3/vim-windowswap'
 
 call plug#end()
 
